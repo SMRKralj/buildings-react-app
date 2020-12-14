@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Buildings from './components/Buildings';
 import AddBuilding from './components/AddBuilding';
-
 import buildings from './mocks/buildings'
 
 import './App.css';
@@ -13,6 +12,13 @@ class App extends Component {
     buildings: buildings,
   };
 
+  // Delete Todo
+  delBuilding = (id) => {
+    this.setState({
+      buildings: [...this.state.buildings.filter((building) => building.id !== id)],
+    })
+  };
+ 
   render() {
     return (
       <Router>
@@ -20,7 +26,14 @@ class App extends Component {
           <div className="container">
             <Header />
             <br />
-            <button color="primary" onClick={e=>{this.show();}}  >Add new building</button>
+            <button
+              color="primary"
+              onClick={(e) => {
+                this.show();
+              }}
+            >
+              Add new building
+            </button>
             <br /> <br />
             <table>
               <thead>

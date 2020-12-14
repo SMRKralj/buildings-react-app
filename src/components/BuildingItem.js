@@ -11,24 +11,37 @@ export class BuildingItem extends Component {
   };
 
   render() {
-    const { name, address, customerName , boilersInstalled } = this.props.building;
+    const {
+      id,
+      name,
+      address,
+      customerName,
+      boilersInstalled,
+    } = this.props.building;
     return (
-      <div className='container' style={this.getStyle()}>
-                 
+      <div className="container" style={this.getStyle()}>
         <table>
           <tbody>
-               <tr align='left'>
+            <tr align="left">
               <td>{name}</td>
               <td>{address}</td>
               <td>{customerName}</td>
-                <td>{toString(boilersInstalled)}</td>
-                <td>
-                  <button align="right" color="primary">Edit</button>
-                  {}
-                  <button align="right" color="red">Delete</button>
-                </td>
-              </tr>
-     
+              <td>{toString(boilersInstalled)}</td>
+              <td>
+                <button align="right" color="primary">
+                  Edit
+                </button>
+                {}
+                <button
+                  align="right"
+                  color="red"
+                  style={btnStyle}
+                  onClick={this.props.delBuilding.bind(this, id)}
+                >
+                  X
+                </button>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
