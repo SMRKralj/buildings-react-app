@@ -15,13 +15,16 @@ export class BuildingItem extends Component {
       id,
       name,
       address,
+      phone,
+      customerId,
       customerName,
-      //boilersInstalled,
     } = this.props.building;
+
     return (
       <div className="container" style={this.getStyle()}>
         <p>
-          {name} {address} {customerName}
+          {name} {address} {phone} {customerId}
+          {customerName}
           <button
             style={btnStyleDel}
             onClick={this.props.delBuilding.bind(this, id)}

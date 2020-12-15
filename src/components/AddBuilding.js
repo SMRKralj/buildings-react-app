@@ -12,11 +12,8 @@ export class AddBuilding extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.addBuilding(this.state.name);
-    this.props.addBuilding(this.state.address);
-    this.props.addBuilding(this.state.phone);
-    this.props.addBuilding(this.state.customerId);
-    this.props.addBuilding(this.state.customerName);
+    this.props.addBuilding(this.state.name, this.state.address,this.state.phone,this.state.customerId,this.state.customerName);
+   
     this.setState({
       name: "",
       address: "",
@@ -40,9 +37,10 @@ export class AddBuilding extends Component {
           name="name"
           style={{ flex: "10", padding: "5px" }}
           placeholder="Add building name ..."
-          value={this.state.name}
+          value={this.state.building}
           onChange={this.onChange}
         />
+
         <input
           type="text"
           name="address"
@@ -51,6 +49,7 @@ export class AddBuilding extends Component {
           value={this.state.address}
           onChange={this.onChange}
         />
+
         <input
           type="text"
           name="phone"
@@ -59,6 +58,7 @@ export class AddBuilding extends Component {
           value={this.state.phone}
           onChange={this.onChange}
         />
+
         <input
           type="text"
           name="customerId"
@@ -67,6 +67,7 @@ export class AddBuilding extends Component {
           value={this.state.customerId}
           onChange={this.onChange}
         />
+
         <input
           type="text"
           name="customerName"

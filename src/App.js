@@ -16,11 +16,11 @@ class App extends Component {
   addBuilding = (name, address, phone, customerId, customerName) => {
     const newBuilding = {
       name,
-     /* address,
+      address,
       phone,
       customerId,
       customerName,
-      id: Math.floor(Math.random() * 101),*/
+      id: Math.floor(Math.random() * 101),
     };
 
     this.setState({ buildings: [...this.state.buildings, newBuilding] });
