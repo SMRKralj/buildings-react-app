@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class Buildings extends Component {
   render() {
     return this.props.buildings.map((building) => (
-      <BuildingItem key={building.id} building={building} markComplete={this.props.markComplete} delBuilding={this.props.delBuilding} />
+      <BuildingItem key={building.id} building={building} delBuilding={this.props.delBuilding} />
     ));
   }
 }
@@ -13,7 +13,6 @@ class Buildings extends Component {
 // PropTypes
 Buildings.propTypes = {
   buildings: PropTypes.array.isRequired,
-  markComplete: PropTypes.func.isRequired,
   delBuilding: PropTypes.func.isRequired,
 }
 

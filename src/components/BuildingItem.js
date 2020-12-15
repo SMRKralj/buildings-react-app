@@ -16,34 +16,20 @@ export class BuildingItem extends Component {
       name,
       address,
       customerName,
-      boilersInstalled,
+      //boilersInstalled,
     } = this.props.building;
     return (
       <div className="container" style={this.getStyle()}>
-        <table>
-          <tbody>
-            <tr align="left">
-              <td>{name}</td>
-              <td>{address}</td>
-              <td>{customerName}</td>
-              <td>{toString(boilersInstalled)}</td>
-              <td>
-                <button align="right" color="primary">
-                  Edit
-                </button>
-                {}
-                <button
-                  align="right"
-                  color="red"
-                  style={btnStyle}
-                  onClick={this.props.delBuilding.bind(this, id)}
-                >
-                  X
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <p>
+          {name} {address} {customerName}
+          <button
+            style={btnStyleDel}
+            onClick={this.props.delBuilding.bind(this, id)}
+          >
+            X
+          </button>
+          <button style={btnStyleEdit}>Edit</button>
+        </p>
       </div>
     );
   }
@@ -54,9 +40,17 @@ BuildingItem.propTypes = {
   building: PropTypes.object.isRequired,
   delBuilding: PropTypes.func.isRequired,
 };
-
-const btnStyle = {
-  background: "#ff0000",
+const btnStyleEdit = {
+  background: "#193c78",
+  color: "#fff",
+  border: "none",
+  padding: "5px 9px",
+  borderRadius: "50%",
+  cursor: "pointer",
+  float: "right",
+};
+const btnStyleDel = {
+  background: "#dc8a2a",
   color: "#fff",
   border: "none",
   padding: "5px 9px",
