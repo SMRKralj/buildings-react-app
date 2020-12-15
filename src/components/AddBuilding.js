@@ -26,12 +26,11 @@ export class AddBuilding extends Component {
     });
   };
 
-  /*onChange = (e) =>
-         [e.target.address]: e.target.value,
-      [e.target.phone]: e.target.value,
-      [e.target.customerId]: e.target.value,
-      [e.target.customerName]: e.target.value,
-    });*/
+  onChange = (e) => {
+    let nam = e.target.name;
+    let val = e.target.value;
+    this.setState({ [nam]: val });
+  };
 
   render() {
     return (
@@ -42,10 +41,7 @@ export class AddBuilding extends Component {
           style={{ flex: "10", padding: "5px" }}
           placeholder="Add building name ..."
           value={this.state.name}
-          onChange={(e) => {
-            const { name, value } = e.target;
-            this.setState({ [name]: value });
-          }}
+          onChange={this.onChange}
         />
         <input
           type="text"
@@ -53,10 +49,7 @@ export class AddBuilding extends Component {
           style={{ flex: "10", padding: "5px" }}
           placeholder="Add building address ..."
           value={this.state.address}
-          onChange={(e) => {
-            const { name, value } = e.target;
-            this.setState({ [name]: value });
-          }}
+          onChange={this.onChange}
         />
         <input
           type="text"
@@ -64,10 +57,7 @@ export class AddBuilding extends Component {
           style={{ flex: "10", padding: "5px" }}
           placeholder="Add building phone ..."
           value={this.state.phone}
-          onChange={(e) => {
-            const { name, value } = e.target;
-            this.setState({ [name]: value });
-          }}
+          onChange={this.onChange}
         />
         <input
           type="text"
@@ -75,10 +65,7 @@ export class AddBuilding extends Component {
           style={{ flex: "10", padding: "5px" }}
           placeholder="Add building customer id ..."
           value={this.state.customerId}
-          onChange={(e) => {
-            const { name, value } = e.target;
-            this.setState({ [name]: value });
-          }}
+          onChange={this.onChange}
         />
         <input
           type="text"
@@ -86,10 +73,7 @@ export class AddBuilding extends Component {
           style={{ flex: "10", padding: "5px" }}
           placeholder="Add building customer name ..."
           value={this.state.customerName}
-          onChange={(e) => {
-            const { name, value } = e.target;
-            this.setState({ [name]: value });
-          }}
+          onChange={this.onChange}
         />
         <input
           type="submit"
